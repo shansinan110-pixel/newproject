@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts World</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">🚗 AutoParts World</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#parts">Spare Parts</a>
+            <a href="#countries">Countries</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="cart-btn" onclick="showCart()">
+            🛒 Cart (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+            <h1>Premium Car Spare Parts</h1>
+
+            <p>
+                Find high-quality automobile spare parts
+                from manufacturers around the world.
+            </p>
+
+            <button onclick="scrollToParts()">
+                Explore Spare Parts
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- Search and Filter -->
+    <section class="controls">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔍 Search spare parts..."
+            onkeyup="searchParts()"
+        >
+
+        <select id="countryFilter" onchange="filterCountry()">
+            <option value="all">🌎 All Countries</option>
+            <option value="Japan">🇯🇵 Japan</option>
+            <option value="Germany">🇩🇪 Germany</option>
+            <option value="USA">🇺🇸 USA</option>
+            <option value="India">🇮🇳 India</option>
+            <option value="Italy">🇮🇹 Italy</option>
+            <option value="South Korea">🇰🇷 South Korea</option>
+        </select>
+
+    </section>
+
+
+    <!-- Spare Parts -->
+    <section id="parts">
+
+        <h2>Available Spare Parts</h2>
+
+        <div class="parts-container">
+
+            <!-- Part 1 -->
+            <div class="part-card" data-country="Japan">
+
+                <div class="part-image">🔧</div>
+
+                <h3>Brake Pads</h3>
+
+                <p class="country">🇯🇵 Japan</p>
+
+                <p>
+                    High-performance brake pads
+                    suitable for Japanese vehicles.
+                </p>
+
+                <h4>₹3,500</h4>
+
+                <button onclick="addToCart('Japanese Brake Pads', 3500)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Part 2 -->
+            <div class="part-card" data-country="Germany">
+
+                <div class="part-image">⚙️</div>
+
+                <h3>Engine Piston</h3>
+
+                <p class="country">🇩🇪 Germany</p>
+
+                <p>
+                    Precision-engineered piston
+                    for high-performance engines.
+                </p>
+
+                <h4>₹8,500</h4>
+
+                <button onclick="addToCart('German Engine Piston', 8500)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Part 3 -->
+            <div class="part-card" data-country="USA">
+
+                <div class="part-image">🚘</div>
+
+                <h3>Air Filter</h3>
+
+                <p class="country">🇺🇸 USA</p>
+
+                <p>
+                    Premium air filter designed
+                    for improved engine performance.
+                </p>
+
+                <h4>₹2,200</h4>
+
+                <button onclick="addToCart('American Air Filter', 2200)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Part 4 -->
+            <div class="part-card" data-country="India">
+
+                <div class="part-image">🔩</div>
+
+                <h3>Clutch Plate</h3>
+
+                <p class="country">🇮🇳 India</p>
+
+                <p>
+                    Durable clutch plate for
+                    everyday driving conditions.
+                </p>
+
+                <h4>₹4,800</h4>
+
+                <button onclick="addToCart('Indian Clutch Plate', 4800)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Part 5 -->
+            <div class="part-card" data-country="Italy">
+
+                <div class="part-image">🏎️</div>
+
+                <h3>Performance Exhaust</h3>
+
+                <p class="country">🇮🇹 Italy</p>
+
+                <p>
+                    Sport exhaust system designed
+                    for performance vehicles.
+                </p>
+
+                <h4>₹18,000</h4>
+
+                <button onclick="addToCart('Italian Performance Exhaust', 18000)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- Part 6 -->
+            <div class="part-card" data-country="South Korea">
+
+                <div class="part-image">🔋</div>
+
+                <h3>Car Battery</h3>
+
+                <p class="country">🇰🇷 South Korea</p>
+
+                <p>
+                    Reliable automotive battery
+                    with long service life.
+                </p>
+
+                <h4>₹7,000</h4>
+
+                <button onclick="addToCart('Korean Car Battery', 7000)">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Countries -->
+    <section id="countries" class="countries">
+
+        <h2>Parts From Around the World</h2>
+
+        <div class="country-container">
+
+            <div>🇯🇵 <strong>Japan</strong><br>Engine & Brake Parts</div>
+
+            <div>🇩🇪 <strong>Germany</strong><br>Performance Parts</div>
+
+            <div>🇺🇸 <strong>USA</strong><br>Filters & Accessories</div>
+
+            <div>🇮🇳 <strong>India</strong><br>Affordable Spare Parts</div>
+
+            <div>🇮🇹 <strong>Italy</strong><br>Sports Car Parts</div>
+
+            <div>🇰🇷 <strong>South Korea</strong><br>Electrical Parts</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <h2>About AutoParts World</h2>
+
+        <p>
+            AutoParts World is a global spare-parts marketplace
+            concept where customers can explore automobile components
+            from different countries and manufacturers.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 AutoParts World | Global Automotive Spare Parts</p>
+
+    </footer>
+
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
