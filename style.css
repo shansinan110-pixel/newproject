@@ -1,0 +1,367 @@
+/* General Settings */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f6f8;
+    color: #222;
+}
+
+
+/* Navigation */
+
+header {
+    background: #111827;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 7%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.cart-btn {
+    background: #f97316;
+    border: none;
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* Hero */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px 8%;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.7)
+        ),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 14px 25px;
+
+    background: #f97316;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: #ea580c;
+}
+
+
+/* Search */
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 35px;
+}
+
+.controls input,
+.controls select {
+
+    padding: 14px;
+
+    width: 300px;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+
+/* Parts Section */
+
+#parts {
+    padding: 50px 7%;
+}
+
+#parts h2,
+.countries h2,
+.about h2 {
+    text-align: center;
+    margin-bottom: 35px;
+
+    font-size: 32px;
+}
+
+
+/* Cards */
+
+.parts-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 25px;
+}
+
+.part-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+
+    text-align: center;
+}
+
+.part-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+.part-image {
+
+    height: 130px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 70px;
+
+    background: #eef2f7;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+}
+
+.part-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.part-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.country {
+    font-weight: bold;
+}
+
+.part-card h4 {
+
+    font-size: 22px;
+
+    margin: 15px 0;
+
+    color: #f97316;
+}
+
+.part-card button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #111827;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.part-card button:hover {
+    background: #374151;
+}
+
+
+/* Countries */
+
+.countries {
+
+    padding: 60px 7%;
+
+    background: #e5e7eb;
+}
+
+.country-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.country-container div {
+
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+/* About */
+
+.about {
+
+    padding: 60px 10%;
+
+    text-align: center;
+
+    background: white;
+}
+
+.about p {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* Footer */
+
+footer {
+
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .controls input,
+    .controls select {
+        width: 90%;
+    }
+}
